@@ -37,7 +37,7 @@ modules:
       - btop
       - tlp
       - tlp-rdw
-      remove:
+    remove:
       - tuned-ppd
       
   - type: default-flatpaks
