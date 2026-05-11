@@ -39,35 +39,37 @@ modules:
       - tlp-rdw
       
   - type: default-flatpaks
-    install:
-      - app.eduroam.geteduroam
-      - app.zen_browser.zen
-      - com.github.tchx84.Flatseal
-      - com.ranfdev.DistroShelf
-      - com.rtosta.zapzap
-      - io.github.brunofin.Cohesion
-      - io.github.cosmic_utils.camera
-      - io.github.flattool.Warehouse
-      - io.github.kolunmi.Bazaar
-      - io.missioncenter.MissionCenter
-      - it.mijorus.gearlever
-      - org.audacityteam.Audacity
-      - org.deskflow.deskflow
-      - org.fedoraproject.MediaWriter
-      - org.fkoehler.KTailctl
-      - org.gnome.Calendar
-      - org.gnome.DejaDup
-      - org.kde.gwenview
-      - org.kde.haruna
-      - org.kde.kcalc
-      - org.kde.kclock
-      - org.kde.kdenlive
-      - org.kde.kontact
-      - org.kde.kweather
-      - org.kde.marknote
-      - org.kde.okular
-      - org.kde.skanpage
-      - org.mozilla.Thunderbird
-      - org.onlyoffice.desktopeditors
-      - org.telegram.desktop
-      - org.videolan.VLC
+    configurations:
+    - name: standard
+      flatpaks:
+        - app.eduroam.geteduroam
+        - app.zen_browser.zen
+        - com.github.tchx84.Flatseal
+        - com.ranfdev.DistroShelf
+        - com.rtosta.zapzap
+        - io.github.brunofin.Cohesion
+        - io.github.cosmic_utils.camera
+        - io.github.flattool.Warehouse
+        - io.github.kolunmi.Bazaar
+        - io.missioncenter.MissionCenter
+        - it.mijorus.gearlever
+        - org.audacityteam.Audacity
+        - org.deskflow.deskflow
+        - org.fedoraproject.MediaWriter
+        - org.fkoehler.KTailctl
+        - org.gnome.Calendar
+        - org.gnome.DejaDup
+        - org.kde.gwenview
+        - org.kde.haruna
+        - org.kde.kcalc
+        - org.kde.kclock
+        - org.kde.kdenlive
+        - org.kde.kontact
+        - org.kde.kweather
+        - org.kde.marknote
+        - org.kde.okular
+        - org.kde.skanpage
+        - org.mozilla.Thunderbird
+        - org.onlyoffice.desktopeditors
+        - org.telegram.desktop
+        - org.videolan.VLC
