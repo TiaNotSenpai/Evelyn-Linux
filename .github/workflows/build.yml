@@ -40,3 +40,26 @@ jobs:
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
           build_opts: --no-sign
+  generate-iso:
+    name: Generate ISO
+    runs-on: ubuntu-latest
+    needs: bluebuild  # Aspetta che la build dell'immagine sia completa
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Install BlueBuild CLI
+        run: |
+          sudo docker create --name blue-build-installer ghcr.io/blue-build/cli:v0.9-installer
+          sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
+          sudo docker rm blue-build-installer
+
+      - name: Generate ISO
+        run: bluebuild generate-iso --iso-name EvelynLinux.iso image ghcr.io/tianotsenpai/evelyn-linux:latest
+
+      - name: Upload ISO as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EvelynLinux-ISO
+          path: EvelynLinux.iso
+          retention-days: 7  # conserva l'ISO per 7 giorni
