@@ -58,7 +58,7 @@ jobs:
         run: bluebuild generate-iso --iso-name EvelynLinux.iso image ghcr.io/tianotsenpai/evelyn-linux:latest
 
       - name: Upload ISO as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: EvelynLinux-ISO
           path: EvelynLinux.iso
